@@ -1,0 +1,5 @@
+# Data notes
+Fixtures: unchanged baseline records (6 occupations/3 groups, 4 providers/1 in Richmond, 6 programs, 10 jobs, 6 cities) plus authored `occupationIds` on each program. All records are fictional demonstration data. Targets in the brief (40/10/16/6/24/80) are NOT met.
+Distance: haversine straight-line between approximate city centers, not travel distance and not exact addresses.
+Best match score per job: +3 if the whole query is inside the title; per query word: +4 title, +2 occupation title, +2 exact related keyword, +1 employer. Blank query scores 0 for all. Ties: most recent (postedDays), title A–Z, ID. No job is pinned or boosted by identity. Under q=administrative, Administrative Assistant ranks first by this rule (score 11, tied with two others, most recent wins).
+Pay sort: upper end of range as hourly equivalent (annual/2,080); unknown pay last. Filters: min pay passes on range upper end (not a guarantee); unknown pay governed by the include checkbox; Daytime excludes unknown schedules.
